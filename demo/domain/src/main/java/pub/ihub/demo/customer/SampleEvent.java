@@ -13,15 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-description = 'Spring Cloud 网关'
+package pub.ihub.demo.customer;
 
-dependencies {
-	implementation('pub.ihub.lib:ihub-boot-cloud-spring-boot-starter') {
-		exclude group: 'org.springframework.boot', module: 'spring-boot-starter-web'
-	}
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import org.jmolecules.event.annotation.DomainEvent;
 
-	// Spring
-	implementation 'org.springframework.cloud:spring-cloud-starter-gateway'
-	// TODO
-	implementation 'org.springframework.boot:spring-boot-starter-data-redis-reactive'
-}
+/**
+ * @author henry
+ */
+@AllArgsConstructor
+@Getter
+@DomainEvent(namespace = "demo", name = "sample")
+public class SampleEvent {
+
+	private String msg;
+
+};

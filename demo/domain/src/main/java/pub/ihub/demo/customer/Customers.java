@@ -13,15 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-description = 'Spring Cloud 网关'
+package pub.ihub.demo.customer;
 
-dependencies {
-	implementation('pub.ihub.lib:ihub-boot-cloud-spring-boot-starter') {
-		exclude group: 'org.springframework.boot', module: 'spring-boot-starter-web'
-	}
+import org.jmolecules.ddd.types.Repository;
+import org.jmolecules.spring.AssociationResolver;
 
-	// Spring
-	implementation 'org.springframework.cloud:spring-cloud-starter-gateway'
-	// TODO
-	implementation 'org.springframework.boot:spring-boot-starter-data-redis-reactive'
+/**
+ * @author henry
+ */
+public interface Customers extends Repository<Customer, CustomerId>, AssociationResolver<Customer, CustomerId> {
+
+	Customer save(Customer customer);
 }

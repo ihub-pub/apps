@@ -16,7 +16,7 @@
 description = '文档服务'
 
 dependencies {
-	implementation 'pub.ihub.lib:ihub-cloud-spring-boot-starter',
+	implementation 'pub.ihub.lib:ihub-boot-cloud-spring-boot-starter',
 		'com.github.xiaoymin:knife4j-spring-ui',
 		'com.github.xiaoymin:knife4j-aggregation-spring-boot-starter'
 }

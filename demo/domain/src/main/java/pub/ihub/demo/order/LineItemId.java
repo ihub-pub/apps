@@ -13,15 +13,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-description = 'Spring Cloud 网关'
+package pub.ihub.demo.order;
 
-dependencies {
-	implementation('pub.ihub.lib:ihub-boot-cloud-spring-boot-starter') {
-		exclude group: 'org.springframework.boot', module: 'spring-boot-starter-web'
+import lombok.Value;
+import org.jmolecules.ddd.types.Identifier;
+
+import java.util.UUID;
+
+/**
+ * @author henry
+ */
+@Value(staticConstructor = "of")
+public class LineItemId implements Identifier {
+
+	private final UUID id;
+
+	public static LineItemId create() {
+		return LineItemId.of(UUID.randomUUID());
 	}
-
-	// Spring
-	implementation 'org.springframework.cloud:spring-cloud-starter-gateway'
-	// TODO
-	implementation 'org.springframework.boot:spring-boot-starter-data-redis-reactive'
 }

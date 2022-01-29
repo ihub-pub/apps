@@ -1,0 +1,5 @@
+description '授权服务'
+
+dependencies {
+    implementation 'pub.ihub.lib:ihub-secure-auth-spring-boot-starter'
+}

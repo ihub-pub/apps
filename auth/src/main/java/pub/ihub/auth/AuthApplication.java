@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021 Henry 李恒 (henry.box@outlook.com).
+ * Copyright (c) 2022 Henry 李恒 (henry.box@outlook.com).
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,15 +13,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-description = 'Spring Cloud 网关'
+package pub.ihub.auth;
 
-dependencies {
-	implementation('pub.ihub.lib:ihub-boot-cloud-spring-boot-starter') {
-		exclude group: 'org.springframework.boot', module: 'spring-boot-starter-web'
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import pub.ihub.secure.auth.EnableAuthorizationServer;
+
+/**
+ * @author henry
+ */
+@SpringBootApplication
+@EnableAuthorizationServer
+public class AuthApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(AuthApplication.class, args);
 	}
 
-	// Spring
-	implementation 'org.springframework.cloud:spring-cloud-starter-gateway'
-	// TODO
-	implementation 'org.springframework.boot:spring-boot-starter-data-redis-reactive'
 }

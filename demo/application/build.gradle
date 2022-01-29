@@ -1,0 +1,14 @@
+apply {
+    plugin 'pub.ihub.plugin.ihub-boot'
+}
+dependencies {
+    implementation project(':ihub-apps-domain')
+    implementation 'pub.ihub.lib:ihub-boot-cloud-spring-boot-starter:main-SNAPSHOT'
+    implementation 'pub.ihub.lib:ihub-boot-doc-spring-boot-starter:main-SNAPSHOT'
+    implementation 'org.springdoc:springdoc-openapi-ui:1.6.4'
+}
+//iHubNative {
+////    bpJvmVersion = '8'
+//    bplJvmHeadRoom = '16G'
+////    bpCleanCache = true
+//}
