@@ -72,8 +72,8 @@ jobs:
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
 
-      - name: Publish Results to Testspace
-        run: testspace */build/test-results/test/*.xml */build/reports/*/test/*.xml
+#      - name: Publish Results to Testspace
+#        run: testspace */build/test-results/test/*.xml */build/reports/*/test/*.xml
 
       - name: Upload Test Result
         if: ${{ failure() }}
