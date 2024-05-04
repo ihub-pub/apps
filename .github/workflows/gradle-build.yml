@@ -53,10 +53,10 @@ jobs:
           distribution: 'adopt'
           cache: 'gradle'
 
-      - name: Testspace Setup CLI
-        uses: testspace-com/setup-testspace@ee1482f978eb5010ec27b6f6372904f01f2edd68 # v1.0.6
-        with:
-          domain: ${{ github.repository_owner }}
+#      - name: Testspace Setup CLI
+#        uses: testspace-com/setup-testspace@ee1482f978eb5010ec27b6f6372904f01f2edd68 # v1.0.6
+#        with:
+#          domain: ${{ github.repository_owner }}
 
       - name: Chmod
         run: chmod +x ./gradlew
