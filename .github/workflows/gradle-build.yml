@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Harden Runner
-        uses: step-security/harden-runner@63c24ba6bd7ba022e95695ff85de572c04a18142 # v2.7.0
+        uses: step-security/harden-runner@a4aa98b93cab29d9b1101a6143fb8bce00e2eac4 # v2.7.1
         with:
           disable-sudo: true
           egress-policy: audit
@@ -39,7 +39,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Harden Runner
-        uses: step-security/harden-runner@63c24ba6bd7ba022e95695ff85de572c04a18142 # v2.7.0
+        uses: step-security/harden-runner@a4aa98b93cab29d9b1101a6143fb8bce00e2eac4 # v2.7.1
         with:
           disable-sudo: true
           egress-policy: audit
@@ -53,10 +53,10 @@ jobs:
           distribution: 'adopt'
           cache: 'gradle'
 
-      - name: Testspace Setup CLI
-        uses: testspace-com/setup-testspace@ee1482f978eb5010ec27b6f6372904f01f2edd68 # v1.0.6
-        with:
-          domain: ${{ github.repository_owner }}
+#      - name: Testspace Setup CLI
+#        uses: testspace-com/setup-testspace@ee1482f978eb5010ec27b6f6372904f01f2edd68 # v1.0.6
+#        with:
+#          domain: ${{ github.repository_owner }}
 
       - name: Chmod
         run: chmod +x ./gradlew
@@ -72,8 +72,8 @@ jobs:
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
 
-      - name: Publish Results to Testspace
-        run: testspace */build/test-results/test/*.xml */build/reports/*/test/*.xml
+#      - name: Publish Results to Testspace
+#        run: testspace */build/test-results/test/*.xml */build/reports/*/test/*.xml
 
       - name: Upload Test Result
         if: ${{ failure() }}
@@ -94,7 +94,7 @@ jobs:
         java_version: [ 17 ]
     steps:
       - name: Harden Runner
-        uses: step-security/harden-runner@63c24ba6bd7ba022e95695ff85de572c04a18142 # v2.7.0
+        uses: step-security/harden-runner@a4aa98b93cab29d9b1101a6143fb8bce00e2eac4 # v2.7.1
         with:
           disable-sudo: true
           egress-policy: audit
