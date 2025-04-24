@@ -29,7 +29,7 @@ jobs:
           cache: 'gradle'
 
       - name: Publish to Central Repository
-        uses: ihub-pub/bot/publish@9f5f4488251eb9328db16af45c4d461982c3018c # v3.0.1
+        uses: ihub-pub/bot/publish@1549e07dacc22e1be2fdc24d279846a7edb2c155 # v3.0.1
         with:
           repoUsername: ${{ secrets.REPO_USERNAME }}
           repoPassword: ${{ secrets.REPO_PASSWORD }}
